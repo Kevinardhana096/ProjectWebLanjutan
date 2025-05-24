@@ -1,0 +1,154 @@
+.heroCarousel {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide {
+    position: relative;
+    height: 600px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: rgba(0, 0, 0, 0.4);
+    filter: blur(10px);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.exploreButton {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.exploreButton:hover {
+    background-color: #151b60;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom styling for react-slick arrows */
+:global(.slick-prev),
+:global(.slick-next) {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+}
+
+:global(.slick-prev) {
+    left: 20px;
+}
+
+:global(.slick-next) {
+    right: 20px;
+}
+
+:global(.slick-prev:before),
+:global(.slick-next:before) {
+    font-size: 40px;
+    opacity: 0.8;
+}
+
+:global(.slick-dots) {
+    bottom: 25px;
+}
+
+:global(.slick-dots li button:before) {
+    font-size: 12px;
+    color: white;
+    opacity: 0.8;
+}
+
+:global(.slick-dots li.slick-active button:before) {
+    color: white;
+    opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .slide {
+        height: 400px;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .exploreButton {
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        height: 300px;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .exploreButton {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+}
